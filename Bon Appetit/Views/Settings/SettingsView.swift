@@ -19,48 +19,8 @@ struct SettingsView: View {
                 #if DEBUG
                     InternalSettings()
                 #endif
-
-                Section(
-                    header: HStack {
-                        Image(systemName: "umbrella")
-                        Text("General")
-                    }
-                ){
-                    NavigationLink(
-                        destination: Appearance(),
-                        label: {
-                            Text("Appearance")
-                        })
-                }
-
-                Section(
-                    header: HStack {
-                        Image(systemName: "tortoise")
-                        Text("About")
-                    },
-                    footer: HStack {
-                        Spacer()
-                        Text("Built with ❤️ by Terrapin Studio")
-                        Spacer()
-                    }
-                ){
-                    HStack {
-                        Text("Version")
-                        Spacer()
-                        Text(UIApplication.appVersion)
-                    }
-
-                    HStack {
-                        Text("Build number")
-                        Spacer()
-                        Text(UIApplication.buildNumber)
-                    }
-
-                    EmailButton(title: "Contact support",
-                                       to: support.to,
-                                       subject: support.subject,
-                                       content: support.body)
-                }
+                GeneralSettingsView()
+                AboutView()
             }
             .insetGroupedStyle()
             .navigationTitle("Settings")
@@ -82,6 +42,37 @@ extension SettingsView {
             \(UIApplication.appVersion)+\(UIApplication.buildNumber)
             """
     }
+    
+    @ViewBuilder func AboutView() -> some View {
+        Section(
+            header: HStack {
+                Image(systemName: "tortoise")
+                Text("About")
+            },
+            footer: HStack {
+                Spacer()
+                Text("Built with ❤️ by Terrapin Studio")
+                Spacer()
+            }
+        ){
+            HStack {
+                Text("Version")
+                Spacer()
+                Text(UIApplication.appVersion)
+            }
+            
+            HStack {
+                Text("Build number")
+                Spacer()
+                Text(UIApplication.buildNumber)
+            }
+            
+            EmailButton(title: "Contact support",
+                        to: support.to,
+                        subject: support.subject,
+                        content: support.body)
+        }
+    }
 
     @ViewBuilder func DoneButton() -> some View {
         Button(action: {
@@ -90,16 +81,6 @@ extension SettingsView {
             Text("Done")
         }
         .buttonStyle(PlainButtonStyle())
-    }
-    
-    @ViewBuilder func Appearance() -> some View {
-        List {
-            Toggle(isOn: $appState.isDarkModeEnabled) {
-                Text("Dark mode")
-            }
-        }
-        .insetGroupedStyle()
-        .navigationTitle("Appearance")
     }
 }
 
