@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0C180824E123FD0041A423 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C180724E123FD0041A423 /* GeneralSettingsView.swift */; };
 		3A0D7A7B24DDFD6E009022E2 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D7A7A24DDFD6E009022E2 /* EmailHelper.swift */; };
 		3A0D7A7F24DE1779009022E2 /* EmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D7A7E24DE1779009022E2 /* EmailButton.swift */; };
 		3A49C6A724D7A7D700CA7664 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49C6A624D7A7D700CA7664 /* App.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A0C180724E123FD0041A423 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		3A0D7A7A24DDFD6E009022E2 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 		3A0D7A7E24DE1779009022E2 /* EmailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailButton.swift; sourceTree = "<group>"; };
 		3A49C6A324D7A7D700CA7664 /* Bon Appetit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bon Appetit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 			children = (
 				3AF5806F24D8AD7A007F7731 /* SettingsView.swift */,
 				3AF5806D24D8AB3D007F7731 /* InternalSettingsView.swift */,
+				3A0C180724E123FD0041A423 /* GeneralSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0C180824E123FD0041A423 /* GeneralSettingsView.swift in Sources */,
 				3A61470F24D8ED7500BFA4CF /* ListModifiers.swift in Sources */,
 				3ADE5E5524D94F5E00014B38 /* NutritionDetailView.swift in Sources */,
 				3A49C6BF24D7D2FB00CA7664 /* SearchBar.swift in Sources */,
