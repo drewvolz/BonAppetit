@@ -79,8 +79,13 @@ extension SettingsView {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
     }
 }
+
+//struct SettingsView_Previews: PreviewProvider {
+//    @State var showingSettings: Bool = true
+//
+//    static var previews: some View {
+//        SettingsView( showingSettings: $showingSettings)
+//    }
+//}
