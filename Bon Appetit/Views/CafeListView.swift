@@ -76,8 +76,9 @@ private extension CafeListView {
         }, label: {
             Image(systemName: "gear")
         })
+        .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $showingSettings) {
-            SettingsView()
+            SettingsView(showingSettings: $showingSettings)
                 .onDisappear(perform: searchbarInit)
                 .environmentObject(self.appState)
         }

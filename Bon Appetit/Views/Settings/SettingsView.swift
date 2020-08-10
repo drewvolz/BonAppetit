@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var appState: AppState
-    
+    @Binding var showingSettings: Bool
+
     let support = Support()
 
     var body: some View {
@@ -61,6 +62,8 @@ struct SettingsView: View {
             }
             .insetGroupedStyle()
             .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: DoneButton())
             .preferredColorScheme(appState.isDarkModeEnabled ? .dark : .light)
         }
     }
@@ -77,8 +80,15 @@ extension SettingsView {
             \(UIApplication.appVersion)+\(UIApplication.buildNumber)
             """
     }
-}
 
+    @ViewBuilder func DoneButton() -> some View {
+        Button(action: {
+            self.showingSettings.toggle()
+        }) {
+            Text("Done")
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
     }
 }
 
