@@ -26,9 +26,11 @@ struct SettingsView: View {
                         Text("General")
                     }
                 ){
-                    Toggle(isOn: $appState.isDarkModeEnabled) {
-                        Text("Dark mode")
-                    }
+                    NavigationLink(
+                        destination: Appearance(),
+                        label: {
+                            Text("Appearance")
+                        })
                 }
 
                 Section(
@@ -89,6 +91,15 @@ extension SettingsView {
         }
         .buttonStyle(PlainButtonStyle())
     }
+    
+    @ViewBuilder func Appearance() -> some View {
+        List {
+            Toggle(isOn: $appState.isDarkModeEnabled) {
+                Text("Dark mode")
+            }
+        }
+        .insetGroupedStyle()
+        .navigationTitle("Appearance")
     }
 }
 

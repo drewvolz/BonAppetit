@@ -15,10 +15,24 @@ struct InternalSettings: View {
             Image(systemName: "ant")
             Text("Internal")
         }) {
+            NavigationLink(
+                destination: FeatureFlags(),
+                label: {
+                    Text("Feature flags")
+                })
+        }
+    }
+}
+
+private extension InternalSettings {
+    @ViewBuilder func FeatureFlags() -> some View {
+        List {
             Toggle(isOn: $appState.showScopeForCafeSearch) {
                 Text("Show scope for cafe search")
             }
         }
+        .insetGroupedStyle()
+        .navigationTitle("Feature flags")
     }
 }
 
